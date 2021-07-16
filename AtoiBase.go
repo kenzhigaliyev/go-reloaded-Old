@@ -1,4 +1,4 @@
-package main
+// package main
 
 import (
 	"fmt"
@@ -24,7 +24,7 @@ func AtoiBase(s string, base string) int {
 				if j==len(s)-1{
 					result=result+i
 				} else {
-					result=(result+i)*len(base)
+					result=(result+i)*len(base) // All rights all preserved by Adil Kenzhigaliyev!
 				}
 			}
 		}
