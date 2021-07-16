@@ -7,7 +7,6 @@ import (
 func AtoiBase(s string, base string) int {
 	str:=[]rune{}
 	result:=0
-	pow:=0
 	for index,char1:=range base{
 		if char1 == '-' || char1 =='+'{
 			return 0
@@ -19,16 +18,14 @@ func AtoiBase(s string, base string) int {
 		}
 		str=append(str,char1)
 	}
-	for _,val:=range s{
+	for j,val:=range s{
 		for i:=0;i<len(base);i++{
 			if val==str[i]{
-				fmt.Println(result)
-				pow=i
-				for i!=0{
-					pow=pow*len(base)
-					i--
+				if j==len(s)-1{
+					result=result+i
+				} else {
+					result=(result+i)*len(base)
 				}
-				result=result+pow
 			}
 		}
 	}
@@ -36,7 +33,7 @@ func AtoiBase(s string, base string) int {
 }
 
 // func AtoiBase(s string, base string) int {
-// 	lengthBase := len(base)
+// 	lengthBase := len(base)1
 // 	result := 0
 // 	for _,char:= range base{
 // 		if char=='-' || char=='+'{
